@@ -1,0 +1,60 @@
+.btn--primary,
+.btn--mobile {
+  position: relative;
+  background: none;
+  border: none;
+  color: #4af626;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  cursor: pointer;
+  height: 100%;
+}
+
+.anim {
+  display: inherit;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.anim-btn {
+  font: inherit;
+  width: inherit;
+}
+
+.anim-text {
+  font: inherit;
+  display: inline-block;
+  position: absolute;
+  width: 0;
+  height: 1.3em;
+  background: black;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn--primary:hover .anim-btn,
+.btn--mobile:hover .anim-btn {
+  color: black;
+}
+
+.btn--primary:hover .anim-text,
+.btn--mobile:hover .anim-text {
+  width: var(--text-width);
+  border-right: 2px solid #4AF626;
+  animation: type 1s steps(var(--steps), end),
+             blink 1.1s linear 1s infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes type {
+  from { width: 0; }
+} 
+
+@keyframes blink { 
+  45% { border-right: 2px solid black; } 
+  100% { border-right: 2px solid black; } 
+}

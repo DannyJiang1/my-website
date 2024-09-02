@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "./Button";
+import { NavItem } from "./NavItem";
 import "./Navbar.css";
 
 function Navbar({ setActivePage }) {
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+  const [mobile, setMobile] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  const showButton = () => {
+  const checkMobile = () => {
     if (window.innerWidth <= 960) {
-      setButton(false);
+      setMobile(true);
     } else {
-      setButton(true);
+      setMobile(false);
     }
   };
 
   useEffect(() => {
-    showButton();
+    checkMobile();
     const handleResize = () => {
-      showButton();
+      checkMobile();
     };
     window.addEventListener("resize", handleResize);
     return () => {
@@ -32,66 +32,61 @@ function Navbar({ setActivePage }) {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <button
-            className="navbar-logo"
-            onClick={() => {
-              setActivePage("home");
-              closeMobileMenu();
-            }}
+          <NavItem
+            setActivePage={setActivePage}
+            closeMobileMenu={closeMobileMenu}
+            page="home"
+            isMobile={false}
+            def_text={"Home"}
+            anim_text={"cd ~"}
           >
             <i className="fa-solid fa-house" />
-            Home
-          </button>
+          </NavItem>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <button
-                className="nav-links"
-                onClick={() => {
-                  setActivePage("about");
-                  closeMobileMenu();
-                }}
-              >
-                About Me
-              </button>
+              <NavItem
+                setActivePage={setActivePage}
+                closeMobileMenu={closeMobileMenu}
+                page="about"
+                isMobile={mobile}
+                def_text={"About Me"}
+                anim_text={"cd about"}
+              ></NavItem>
             </li>
             <li className="nav-item">
-              <button
-                className="nav-links"
-                onClick={() => {
-                  setActivePage("experiences");
-                  closeMobileMenu();
-                }}
-              >
-                Experiences
-              </button>
+              <NavItem
+                setActivePage={setActivePage}
+                closeMobileMenu={closeMobileMenu}
+                page="experiences"
+                isMobile={mobile}
+                def_text={"Experiences"}
+                anim_text={"cd experiences"}
+              ></NavItem>
             </li>
             <li className="nav-item">
-              <button
-                className="nav-links"
-                onClick={() => {
-                  setActivePage("projects");
-                  closeMobileMenu();
-                }}
-              >
-                Projects
-              </button>
+              <NavItem
+                setActivePage={setActivePage}
+                closeMobileMenu={closeMobileMenu}
+                page="projects"
+                isMobile={mobile}
+                def_text={"Projects"}
+                anim_text={"cd projects"}
+              ></NavItem>
             </li>
-            <li className="nav-contact">
-              <button
-                className="nav-links-mobile"
-                onClick={() => {
-                  setActivePage("projects");
-                  closeMobileMenu();
-                }}
-              >
-                Contact Me
-              </button>
+            <li className="nav-item">
+              <NavItem
+                setActivePage={setActivePage}
+                closeMobileMenu={closeMobileMenu}
+                page="contact"
+                isMobile={mobile}
+                def_text={"Contact Me"}
+                anim_text={"curl"}
+              ></NavItem>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">Message Me</Button>}
         </div>
       </nav>
     </>
