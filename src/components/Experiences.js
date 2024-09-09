@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import Entry from "./Entry";
+import EntryPopup from "./EntryPopUp";
 
 function Experiences() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleOpenPopup = () => setShowPopup(true);
+  const handleClosePopup = () => setShowPopup(false);
+
   return (
     <div>
-      <h1>Experiences</h1>
-      <p>This is the Experiences page.</p>
+      <button onClick={handleOpenPopup}>Show Entry Popup</button>
+
+      {showPopup && (
+        <EntryPopup title="Project 1" onClose={handleClosePopup}>
+          This project involved building a machine learning model that predicts
+          stock prices based on historical data.
+        </EntryPopup>
+      )}
     </div>
   );
 }
