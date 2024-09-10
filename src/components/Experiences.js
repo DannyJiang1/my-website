@@ -1,22 +1,35 @@
 import React, { useState } from "react";
-import Entry from "./Entry";
-import EntryPopup from "./EntryPopUp";
+import EntryPopUp from "./EntryPopUp";
 
 function Experiences() {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopUp] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-  const handleOpenPopup = () => setShowPopup(true);
-  const handleClosePopup = () => setShowPopup(false);
+  const handleOpenPopUp = () => {
+    setIsClosing(false);
+    setShowPopUp(true);
+  };
+
+  const handleClosePopUp = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowPopUp(false);
+    }, 450); // Ensure this matches the CSS animation duration
+  };
 
   return (
     <div>
-      <button onClick={handleOpenPopup}>Show Entry Popup</button>
+      <button onClick={handleOpenPopUp}>Show Entry Popup</button>
 
       {showPopup && (
-        <EntryPopup title="Project 1" onClose={handleClosePopup}>
+        <EntryPopUp
+          title="Project 1"
+          onClose={handleClosePopUp}
+          isClosing={isClosing}
+        >
           This project involved building a machine learning model that predicts
           stock prices based on historical data.
-        </EntryPopup>
+        </EntryPopUp>
       )}
     </div>
   );
