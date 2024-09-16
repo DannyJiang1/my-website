@@ -1,0 +1,9 @@
+.entry-box{
+    border-width: 2px;
+    border-style: solid;
+    border-color: #4AF626;
+    padding: "20px";
+    margin-bottom: "20px";
+    border-radius: "8px";
+    background-color: none;
+}
