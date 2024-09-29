@@ -25,14 +25,25 @@ export const NavItem = ({
   };
 
   useEffect(() => {
-    if (animTextRef.current) {
-      const textWidth = animTextRef.current.scrollWidth + 5;
-      animTextRef.current.style.setProperty("--text-width", `${textWidth}px`);
-      animTextRef.current.style.setProperty(
-        "--steps",
-        animTextRef.current.textContent.length
-      );
-    }
+    const calculateTextWidth = () => {
+      if (animTextRef.current) {
+        const textWidth = animTextRef.current.scrollWidth;
+        animTextRef.current.style.setProperty("--text-width", `${textWidth}px`);
+        animTextRef.current.style.setProperty(
+          "--steps",
+          animTextRef.current.textContent.length
+        );
+        console.log(
+          `Text width: ${textWidth}px, Text length: ${animTextRef.current.textContent.length}`
+        );
+      }
+    };
+
+    const timeout = setTimeout(() => {
+      calculateTextWidth();
+    }, 100); // Add a slight delay to allow layout to settle
+
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
