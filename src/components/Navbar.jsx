@@ -1,32 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavItem } from "./NavItem";
 import "./Navbar.css";
 
-function Navbar({ setActivePage }) {
+function Navbar({ setActivePage, mobile }) {
   const [click, setClick] = useState(false);
-  const [mobile, setMobile] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  const checkMobile = () => {
-    if (window.innerWidth <= 960) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
-  };
-
-  useEffect(() => {
-    checkMobile();
-    const handleResize = () => {
-      checkMobile();
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <>

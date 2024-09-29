@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-function Home() {
+function Home({ mobile }) {
   const [showText, setShowText] = useState(false);
   const [showCatCommand, setShowCatCommand] = useState(false);
   const [showActualHomePage, setShowActualHomePage] = useState(false);
@@ -54,12 +54,21 @@ function Home() {
           backgroundColor: "black",
           height: `calc(100vh - ${navbarHeight}px)`,
           padding: "20px",
-          display: "flex", // Use flexbox to split the screen into two sections
-          alignItems: "center", // Center content vertically
-          justifyContent: "space-between", // Space between left and right sections
+          color: "#4AF626",
+          fontFamily: "'OCR A Std', sans-serif",
+          display: mobile ? "block" : "flex", // Flexbox for desktop, block layout for mobile
+          alignItems: mobile ? "initial" : "center", // Center content vertically in desktop
+          justifyContent: mobile ? "initial" : "space-between", // Space between text and image in desktop
         }}
       >
-        <div style={{ flex: 1, color: "#4AF626", fontSize: "18px" }}>
+        {/* Text section on the left */}
+        <div
+          style={{
+            flex: mobile ? "none" : 1,
+            fontSize: "18px",
+            maxWidth: "600px", // Control the width of the text area on desktop
+          }}
+        >
           <div style={{ paddingBottom: "20px" }}>
             <TypeAnimation
               cursor={false}
@@ -67,7 +76,6 @@ function Home() {
               speed={200}
               style={{
                 fontSize: "30px",
-                fontFamily: "'OCR A Std', sans-serif",
                 color: "#4AF626",
               }}
               className={CURSOR_CLASS_NAME}
@@ -80,7 +88,6 @@ function Home() {
               speed={200}
               style={{
                 fontSize: "14px",
-                fontFamily: "'OCR A Std', sans-serif",
                 color: "#4AF626",
               }}
               className={CURSOR_CLASS_NAME}
@@ -95,7 +102,6 @@ function Home() {
               speed={75}
               style={{
                 fontSize: "20px",
-                fontFamily: "'OCR A Std', sans-serif",
                 color: "#4AF626",
               }}
               className={CURSOR_CLASS_NAME}
@@ -103,12 +109,25 @@ function Home() {
           </div>
         </div>
 
-        {/* Right section with an image */}
-        <div style={{ flex: 1, textAlign: "center" }}>
+        {/* Image section on the right */}
+        <div
+          style={{
+            flex: mobile ? "none" : 1,
+            display: "flex",
+            justifyContent: "center", // Center image in mobile and desktop
+            alignItems: "center", // Vertically center the image in desktop mode
+            marginTop: mobile ? "20px" : "0", // Add margin to separate image and text in mobile
+          }}
+        >
           <img
             src="https://via.placeholder.com/300"
             alt="Placeholder"
-            style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
+            style={{
+              maxWidth: "300px",
+              width: "100%", // Make sure the image scales properly
+              height: "auto",
+              borderRadius: "8px",
+            }}
           />
         </div>
       </div>

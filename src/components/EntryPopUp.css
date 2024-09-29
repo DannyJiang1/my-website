@@ -1,13 +1,9 @@
 .main-box {
   position: absolute;
-  right: 20px;
-  top: 50px;
-  width: 500px;
+  width: 475px;
   height: 600px;
   font-family: 'OCR A Std', sans-serif;
-  margin: 50px auto;
   overflow: hidden;
-  transition: all;
 }
 
 .visible-box {
@@ -27,7 +23,6 @@
   padding: 5px;
   border-bottom: 2px solid #4AF626;
   z-index: 3;
-  transition: all;
 }
 
 .visible-top-box {
@@ -46,7 +41,6 @@
   color: #4AF626;
   font-size: 20px;
   cursor: pointer;
-  transition: all;
 }
 
 .hidden-top-box .close-button {
@@ -61,7 +55,7 @@
   height: 100%;
   background-color: #4af626;
   z-index: 2;
-  transform: translateY(-100%);
+  transform: translateY(-100%); /* Hidden position before animation */
 }
 
 @keyframes slideDown {
@@ -74,7 +68,7 @@
 }
 
 .slide-transition {
-  animation: slideDown 2s forwards ease-in-out;
+  animation: slideDown 1s forwards ease-in-out;
 }
 
 .slide-reset {
@@ -86,6 +80,15 @@
   font-size: 24px;
   margin-bottom: 10px;
   z-index: 3;
+}
+
+.body-text {
+  color: #4AF626;
+  font-size: 16px;
+  margin-bottom: 10px;
+  z-index: 3;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .fa-times {

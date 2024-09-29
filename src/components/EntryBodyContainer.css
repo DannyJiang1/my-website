@@ -1,0 +1,7 @@
+.entry-body-container {
+  max-height: 400px; /* Set a fixed height for the scrollable container */
+  overflow-y: auto;  /* Enable vertical scrolling if content exceeds max-height */
+  padding: 10px;
+  background-color: #000;
+  color: #4AF626; /* Assuming you want the same color scheme */
+}

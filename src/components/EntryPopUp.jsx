@@ -33,7 +33,7 @@ function EntryPopup({
       {isContentVisible && ( // Render content only when it's supposed to be visible
         <div style={{ padding: "20px", position: "relative" }}>
           <h2 className="title-text">{title}</h2>
-          <div style={{ fontSize: "16px", lineHeight: "1.5" }}>{children}</div>
+          <div className="body-text">{children}</div>
         </div>
       )}
     </div>

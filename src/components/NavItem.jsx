@@ -33,9 +33,6 @@ export const NavItem = ({
           "--steps",
           animTextRef.current.textContent.length
         );
-        console.log(
-          `Text width: ${textWidth}px, Text length: ${animTextRef.current.textContent.length}`
-        );
       }
     };
 

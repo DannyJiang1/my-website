@@ -2,7 +2,7 @@ import React from "react";
 import { useScramble } from "use-scramble";
 import "./About.css";
 
-function About() {
+function About({ mobile }) {
   const navbarHeight = 80;
 
   const { ref: aboutMeRef } = useScramble({
@@ -82,17 +82,25 @@ function About() {
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
         backgroundColor: "black",
-        height: `calc(100vh - ${navbarHeight}px)`,
+        minHeight: `calc(100vh - ${navbarHeight}px)`, // Ensure the container covers the viewport
         padding: "40px",
         fontFamily: "'OCR A Std', sans-serif",
         color: "#4AF626",
+        display: mobile ? "block" : "flex", // Flexbox for desktop, block layout for mobile
+        justifyContent: mobile ? "initial" : "space-between", // Align items in desktop
+        alignItems: mobile ? "initial" : "center", // Center items vertically in desktop
+        overflowY: "auto", // Enable scrolling when content overflows
       }}
     >
-      <div style={{ flex: 1, paddingRight: "20px" }}>
+      {/* Text section */}
+      <div
+        style={{
+          flex: mobile ? "none" : 1,
+          paddingRight: mobile ? "0" : "20px", // Add padding for desktop
+          marginBottom: mobile ? "20px" : "0", // Add margin for mobile
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -139,11 +147,25 @@ function About() {
         <p className="body-text" ref={mlRef} />
       </div>
 
-      <div style={{ flex: 1, textAlign: "center" }}>
+      {/* Image section */}
+      <div
+        style={{
+          flex: mobile ? "none" : 1,
+          display: "flex",
+          justifyContent: mobile ? "center" : "center", // Center image in mobile and desktop
+          alignItems: "center", // Vertically center the image in desktop mode
+          marginTop: mobile ? "20px" : "0", // Add margin to separate image and text in mobile
+        }}
+      >
         <img
-          src="https://via.placeholder.com/400"
+          src="https://via.placeholder.com/300"
           alt="Placeholder"
-          style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
+          style={{
+            maxWidth: "300px",
+            width: "100%", // Make sure the image scales properly
+            height: "auto",
+            borderRadius: "8px",
+          }}
         />
       </div>
     </div>
