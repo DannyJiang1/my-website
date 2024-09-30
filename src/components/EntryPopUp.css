@@ -1,7 +1,11 @@
 .main-box {
   position: absolute;
-  width: 475px;
-  height: 600px;
+  width: calc(25vw + 100px);
+  height: calc(50vh + 150px);
+  min-width: 475px;
+  max-width: 600px;
+  min-height: 600px;
+  max-height: 750px;
   font-family: 'OCR A Std', sans-serif;
   overflow: hidden;
 }

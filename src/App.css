@@ -4,3 +4,19 @@
   padding: 0;
   font-family: 'OCR A Std', sans-serif;
 }
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #4AF626;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: #4AF626;
+}

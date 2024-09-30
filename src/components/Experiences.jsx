@@ -179,7 +179,7 @@ function Experiences({ mobile }) {
                 position: "fixed",
                 top: "15%",
                 left: "50%",
-                transform: "translate(-50%, -50%)", // transform needs to be a string
+                width: "calc(100vw - 50px)",
               }}
             >
               <EntryPopUp

@@ -1,6 +1,0 @@
-.popup-overlay {
-  position: fixed;
-  top: 10%;
-  left: 60%; /* Right half of the screen for desktop */
-  transform: translate(-50%, -50%); /* Center horizontally and vertically */
-}

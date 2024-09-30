@@ -56,17 +56,18 @@ function Home({ mobile }) {
           padding: "20px",
           color: "#4AF626",
           fontFamily: "'OCR A Std', sans-serif",
-          display: mobile ? "block" : "flex", // Flexbox for desktop, block layout for mobile
-          alignItems: mobile ? "initial" : "center", // Center content vertically in desktop
-          justifyContent: mobile ? "initial" : "space-between", // Space between text and image in desktop
+          display: "flex",
+          flexDirection: mobile ? "column" : "row",
+          alignItems: mobile ? "flex-start" : "center",
+          justifyContent: mobile ? "flex-start" : "space-between",
         }}
       >
-        {/* Text section on the left */}
         <div
           style={{
             flex: mobile ? "none" : 1,
             fontSize: "18px",
-            maxWidth: "600px", // Control the width of the text area on desktop
+            maxWidth: "600px",
+            marginBottom: mobile ? "auto" : "0",
           }}
         >
           <div style={{ paddingBottom: "20px" }}>
@@ -109,14 +110,16 @@ function Home({ mobile }) {
           </div>
         </div>
 
-        {/* Image section on the right */}
         <div
           style={{
             flex: mobile ? "none" : 1,
             display: "flex",
-            justifyContent: "center", // Center image in mobile and desktop
-            alignItems: "center", // Vertically center the image in desktop mode
-            marginTop: mobile ? "20px" : "0", // Add margin to separate image and text in mobile
+            justifyContent: mobile ? "center" : "center",
+            alignItems: "center",
+            alignSelf: mobile ? "flex-end" : "center",
+            width: "100%",
+            paddingTop: "60px",
+            paddingBottom: "60px",
           }}
         >
           <img
@@ -124,7 +127,7 @@ function Home({ mobile }) {
             alt="Placeholder"
             style={{
               maxWidth: "300px",
-              width: "100%", // Make sure the image scales properly
+              width: "100%",
               height: "auto",
               borderRadius: "8px",
             }}
