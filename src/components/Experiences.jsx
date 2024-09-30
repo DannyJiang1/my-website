@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import EntryPopUp from "./EntryPopUp";
 import Entry from "./Entry";
 import MobileEntry from "./MobileEntry";
+import EntryBodyContainer from "./EntryBodyContainer";
 
 function Experiences({ mobile }) {
   const [showPopup, setShowPopUp] = useState(false);
@@ -77,101 +78,210 @@ function Experiences({ mobile }) {
     >
       {mobile ? (
         <div>
-          <MobileEntry
-            title={"SUSE"}
-            onClick={() => handleTransition("TEST pTitle1", "TEST pText1", 0)}
-          >
-            Show Entry Popup
+          <MobileEntry title={"SUSE"}>
+            <h3>Inspiration</h3>
+            <p>
+              The inspiration behind the SIM project stemmed from the need to
+              streamline transportation research. Researchers often faced the
+              challenge of manually setting up complex driving scenarios, which
+              was both time-consuming and tedious. The project aimed to create
+              an intuitive platform that not only simplified scenario creation
+              but also integrated automated driving simulations. This vision of
+              reducing manual labor and increasing efficiency for researchers
+              was the driving force behind the development of the platform.
+            </p>
+            <br></br>
+            <h3>What it does</h3>
+            <p>
+              The project itself is a two-part system: one part focused on the
+              scenario creator, and the other on the automated driving
+              simulation. The scenario creator has both frontend and backend
+              components. The frontend is a graphical user interface (GUI)
+              designed to enable easy and intuitive scenario creation, while the
+              backend handles the actual generation and rendering of the
+              scenarios. The second component simulates automated driving,
+              achieved through connecting a hardware wheel to Unreal Engine.
+              This simulation uses a "wizard of oz" strategy, which gives the
+              illusion of autonomous driving while human input is hidden behind
+              the scenes.
+            </p>
+            <br></br>
+            <h3>What I did</h3>
+            <p>
+              During my time on the project, I was responsible for refactoring
+              the connection between the frontend UI and the backend generator,
+              ensuring smooth communication and configuration handling. My work
+              primarily involved managing the configuration flow by designing an
+              API that handled data between the front and backend in Python.
+              Additionally, I implemented a feature that allowed users to switch
+              between third-person and first-person perspectives in the
+              simulator, using C++ to integrate this feature. Alongside these
+              technical tasks, I also managed a subteam, helping to coordinate
+              work and motivate my peers.
+            </p>
+            <br></br>
+            <h3>Challenges I ran into</h3>
+            <p>
+              The challenges I encountered primarily revolved around
+              understanding the large, unfamiliar codebase. Without prior
+              knowledge of the system, I had to invest significant time in
+              learning the architecture step by step, which was initially
+              overwhelming. Furthermore, I faced challenges within the subteam,
+              where productivity issues and inconsistent attendance affected
+              progress. However, I took on additional responsibilities and kept
+              the team motivated, ensuring we met our goals.
+            </p>
+            <br></br>
+            <h3>Accomplishments that I was proud of</h3>
+            <p>
+              I’m particularly proud of both my technical contributions and my
+              leadership within the team. On the technical side, successfully
+              refactoring the backend connection and implementing the
+              perspective-switching feature were key milestones. Seeing the
+              scenarios created and functioning as intended gave me immense
+              satisfaction. Additionally, despite the team’s initial
+              productivity struggles, I took on leadership responsibilities,
+              stepping in when necessary, and helping the team deliver our tasks
+              on time.
+            </p>
+            <br></br>
+            <h3>What I learned</h3>
+            <p>
+              This project marked my first experience working with a large
+              codebase and introduced me to critical software engineering
+              concepts such as code reviews and testing. However, the most
+              valuable lesson I took away from the project was the importance of
+              communication. Throughout the project, I saw firsthand how a lack
+              of communication hindered productivity, and I learned how strong
+              communication can greatly improve team performance. Managing a
+              subteam taught me how to keep everyone aligned and motivated,
+              which will be a crucial skill moving forward in my career.
+            </p>
           </MobileEntry>
-          <MobileEntry
-            title={"SUSE2"}
-            onClick={() => handleTransition("TEST pTitle2", "TEST pText2", 1)}
-          >
-            MOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas lk;dfm;aslkdfms;alk
-            mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl; asfadfasfma
-            sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma sflkdsm
-            MOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas lk;dfm;aslkdfms;alk
-            mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl; asfadfasfma
-            sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma
-            sflkdsmMOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas
-            lk;dfm;aslkdfms;alk mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl;
-            asfadfasfma sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma
-            sflkdsmMOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas
-            lk;dfm;aslkdfms;alk mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl;
-            asfadfasfma sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma sflkdsm
-          </MobileEntry>
-          <MobileEntry
-            title={"SUSE2"}
-            onClick={() => handleTransition("TEST pTitle2", "TEST pText2", 1)}
-          >
-            MOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas lk;dfm;aslkdfms;alk
-            mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl; asfadfasfma
-            sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma sflkdsm
-            MOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas lk;dfm;aslkdfms;alk
-            mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl; asfadfasfma
-            sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma
-            sflkdsmMOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas
-            lk;dfm;aslkdfms;alk mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl;
-            asfadfasfma sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma
-            sflkdsmMOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas
-            lk;dfm;aslkdfms;alk mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl;
-            asfadfasfma sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma sflkdsm
-          </MobileEntry>
-          <MobileEntry
-            title={"SUSE2"}
-            onClick={() => handleTransition("TEST pTitle2", "TEST pText2", 1)}
-          >
-            MOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas lk;dfm;aslkdfms;alk
-            mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl; asfadfasfma
-            sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma sflkdsm
-            MOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas lk;dfm;aslkdfms;alk
-            mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl; asfadfasfma
-            sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma
-            sflkdsmMOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas
-            lk;dfm;aslkdfms;alk mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl;
-            asfadfasfma sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma
-            sflkdsmMOBILE dfl; asfadfasfma sdflkasfdams dfkldasmfas
-            lk;dfm;aslkdfms;alk mfsal;mfsad sfdmasfmas;lfmasflkdsm MOBILE dfl;
-            asfadfasfma sdflkasfdam sdfkldasmfaslk;d fm;aslkdfms;alkm fsal;mfsad
-            sfdmasfmas;lfm asflkdsmMOBILE dfl; asfadfa sfmasdflkas fdamsdfk
-            ldasmfa slk;dfm;asl kdfms;alkmf sal;mfsad sfdmasfm as;lfma sflkdsm
-          </MobileEntry>
+          <MobileEntry title={"SUSE2"}></MobileEntry>
+          <MobileEntry title={"SUSE2"}></MobileEntry>
+          <MobileEntry title={"SUSE2"}></MobileEntry>
         </div>
       ) : (
         <div>
           <Entry
             title={"SUSE"}
-            onClick={() => handleTransition("TEST pTitle1", "TEST pText1", 0)}
+            onClick={() => handleTransition("SUSE", "TEST pText1", 0)}
           >
-            Show Entry Popup
+            <h3>Software Engineer Intern</h3>
+            <p>Jun. 2023 - Aug. 2023</p>
           </Entry>
           <Entry
-            title={"SUSE2"}
-            onClick={() => handleTransition("TEST pTitle2", "TEST pText2", 1)}
+            title={"University of Michigan SIM Multidisciplinary Research Team"}
+            onClick={() =>
+              handleTransition(
+                "University of Michigan SIM Multidisciplinary Research Team",
+                <>
+                  <h3>Inspiration</h3>
+                  <p>
+                    The inspiration behind the SIM project stemmed from the need
+                    to streamline transportation research. Researchers often
+                    faced the challenge of manually setting up complex driving
+                    scenarios, which was both time-consuming and tedious. The
+                    project aimed to create an intuitive platform that not only
+                    simplified scenario creation but also integrated automated
+                    driving simulations. This vision of reducing manual labor
+                    and increasing efficiency for researchers was the driving
+                    force behind the development of the platform.
+                  </p>
+                  <br></br>
+                  <h3>What it does</h3>
+                  <p>
+                    The project itself is a two-part system: one part focused on
+                    the scenario creator, and the other on the automated driving
+                    simulation. The scenario creator has both frontend and
+                    backend components. The frontend is a graphical user
+                    interface (GUI) designed to enable easy and intuitive
+                    scenario creation, while the backend handles the actual
+                    generation and rendering of the scenarios. The second
+                    component simulates automated driving, achieved through
+                    connecting a hardware wheel to Unreal Engine. This
+                    simulation uses a "wizard of oz" strategy, which gives the
+                    illusion of autonomous driving while human input is hidden
+                    behind the scenes.
+                  </p>
+                  <br></br>
+                  <h3>What I did</h3>
+                  <p>
+                    During my time on the project, I was responsible for
+                    refactoring the connection between the frontend UI and the
+                    backend generator, ensuring smooth communication and
+                    configuration handling. My work primarily involved managing
+                    the configuration flow by designing an API that handled data
+                    between the front and backend in Python. Additionally, I
+                    implemented a feature that allowed users to switch between
+                    third-person and first-person perspectives in the simulator,
+                    using C++ to integrate this feature. Alongside these
+                    technical tasks, I also managed a subteam, helping to
+                    coordinate work and motivate my peers.
+                  </p>
+                  <br></br>
+                  <h3>Challenges I ran into</h3>
+                  <p>
+                    The challenges I encountered primarily revolved around
+                    understanding the large, unfamiliar codebase. Without prior
+                    knowledge of the system, I had to invest significant time in
+                    learning the architecture step by step, which was initially
+                    overwhelming. Furthermore, I faced challenges within the
+                    subteam, where productivity issues and inconsistent
+                    attendance affected progress. However, I took on additional
+                    responsibilities and kept the team motivated, ensuring we
+                    met our goals.
+                  </p>
+                  <br></br>
+                  <h3>Accomplishments that I was proud of</h3>
+                  <p>
+                    I’m particularly proud of both my technical contributions
+                    and my leadership within the team. On the technical side,
+                    successfully refactoring the backend connection and
+                    implementing the perspective-switching feature were key
+                    milestones. Seeing the scenarios created and functioning as
+                    intended gave me immense satisfaction. Additionally, despite
+                    the team’s initial productivity struggles, I took on
+                    leadership responsibilities, stepping in when necessary, and
+                    helping the team deliver our tasks on time.
+                  </p>
+                  <br></br>
+                  <h3>What I learned</h3>
+                  <p>
+                    This project marked my first experience working with a large
+                    codebase and introduced me to critical software engineering
+                    concepts such as code reviews and testing. However, the most
+                    valuable lesson I took away from the project was the
+                    importance of communication. Throughout the project, I saw
+                    firsthand how a lack of communication hindered productivity,
+                    and I learned how strong communication can greatly improve
+                    team performance. Managing a subteam taught me how to keep
+                    everyone aligned and motivated, which will be a crucial
+                    skill moving forward in my career.
+                  </p>
+                </>,
+                1
+              )
+            }
           >
-            Show Entry Popup
+            <h3>Student Software Engineer</h3>
+            <p>Jan. 2023 - Jan. 2024</p>
+          </Entry>
+          <Entry
+            title={"University of Michigan College of Engineering"}
+            onClick={() =>
+              handleTransition(
+                "University of Michigan College of Engineering",
+                "TEST pText1",
+                2
+              )
+            }
+          >
+            <>
+              <h3>Research Assistant</h3>
+              <p>Jun. 2024 - Present</p>
+            </>
           </Entry>
           {showPopup && !mobile && (
             <div
@@ -188,7 +298,7 @@ function Experiences({ mobile }) {
                 isTransitioning={isTransitioning}
                 isContentVisible={isContentVisible}
               >
-                {popupText}
+                <EntryBodyContainer>{popupText}</EntryBodyContainer>
               </EntryPopUp>
             </div>
           )}
