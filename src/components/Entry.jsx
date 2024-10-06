@@ -7,7 +7,7 @@ function Entry({ title, children, onClick }) {
       <h2 style={{ color: "inherit", fontSize: "24px", marginBottom: "10px" }}>
         {title}
       </h2>
-      <p style={{ fontSize: "16px", color: "inherit" }}>{children}</p>
+      <div style={{ fontSize: "16px", color: "inherit" }}>{children}</div>
     </div>
   );
 }

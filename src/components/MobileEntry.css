@@ -10,6 +10,11 @@
   color: #4AF626;
 }
 
+.role-text{
+  color: #4AF626;
+  z-index: 3;
+}
+
 @media (max-width: 550px) {
   .entry-box-mobile {
     width: 100%;

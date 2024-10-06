@@ -86,6 +86,11 @@
   z-index: 3;
 }
 
+.role-text{
+  color: #4AF626;
+  z-index: 3;
+}
+  
 .body-text {
   color: #4AF626;
   font-size: 16px;

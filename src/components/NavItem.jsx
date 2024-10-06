@@ -38,7 +38,7 @@ export const NavItem = ({
 
     const timeout = setTimeout(() => {
       calculateTextWidth();
-    }, 100); // Add a slight delay to allow layout to settle
+    }, 200); // Add a slight delay to allow layout to settle
 
     return () => clearTimeout(timeout);
   }, []);

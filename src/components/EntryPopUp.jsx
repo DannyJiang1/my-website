@@ -1,8 +1,11 @@
 import React from "react";
+import Skills from "./Skills";
 import "./EntryPopUp.css";
 
 function EntryPopup({
   title,
+  role,
+  skills,
   children,
   onClose,
   isTransitioning,
@@ -33,6 +36,8 @@ function EntryPopup({
       {isContentVisible && ( // Render content only when it's supposed to be visible
         <div style={{ padding: "20px", position: "relative" }}>
           <h2 className="title-text">{title}</h2>
+          <h3 className="role-text">{role}</h3>
+          <Skills skills={skills}></Skills>
           <div className="body-text">{children}</div>
         </div>
       )}
