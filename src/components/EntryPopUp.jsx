@@ -5,6 +5,7 @@ import "./EntryPopUp.css";
 function EntryPopup({
   title,
   role,
+  link,
   skills,
   children,
   onClose,
@@ -36,7 +37,19 @@ function EntryPopup({
       {isContentVisible && ( // Render content only when it's supposed to be visible
         <div style={{ padding: "20px", position: "relative" }}>
           <h2 className="title-text">{title}</h2>
-          <h3 className="role-text">{role}</h3>
+          <h3 className="role-text">
+            {role}
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginLeft: "10px" }}
+              >
+                <i className="fa-brands fa-github" />
+              </a>
+            )}
+          </h3>
           <Skills skills={skills}></Skills>
           <div className="body-text">{children}</div>
         </div>

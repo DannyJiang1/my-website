@@ -132,7 +132,7 @@ function About({ mobile }) {
               <i className="fa-brands fa-github link-icon" />
             </a>
             <a
-              href="https://www.linkedin.com/in/danny-jiang-812282234/"
+              href="https://www.linkedin.com/in/jdanny/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -147,26 +147,36 @@ function About({ mobile }) {
         <p className="body-text" ref={mlRef} />
       </div>
 
-      {/* Image section */}
       <div
         style={{
           flex: mobile ? "none" : 1,
           display: "flex",
-          justifyContent: mobile ? "center" : "center", // Center image in mobile and desktop
-          alignItems: "center", // Vertically center the image in desktop mode
-          marginTop: mobile ? "20px" : "0", // Add margin to separate image and text in mobile
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: mobile ? "20px" : "0",
         }}
       >
         <img
-          src="https://via.placeholder.com/300"
-          alt="Placeholder"
+          src="Prague.png"
+          alt="Prague"
           style={{
-            maxWidth: "300px",
+            maxWidth: "700px",
             width: "100%", // Make sure the image scales properly
             height: "auto",
             borderRadius: "8px",
           }}
         />
+        <p
+          style={{
+            marginTop: "8px", // Add some space between the image and the caption
+            color: "#4AF626", // Match the text color to the theme
+            fontSize: "14px", // Adjust the font size as needed
+            textAlign: "center", // Center the caption text
+          }}
+        >
+          My Hometown Prague
+        </p>
       </div>
     </div>
   );

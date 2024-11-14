@@ -21,7 +21,13 @@ import {
   SiGithubactions,
   SiGnubash,
   SiHuggingface,
+  SiOpencv,
 } from "react-icons/si";
+import {
+  SiExpress,
+  SiSocketdotio,
+  SiUnity,
+} from "@icons-pack/react-simple-icons";
 import "./Skills.css";
 
 const Skills = ({ skills }) => {
@@ -47,6 +53,10 @@ const Skills = ({ skills }) => {
       // Software Skills & Frameworks
       case "React":
         return <FaReact title="React" />;
+      case "Express":
+        return <SiExpress title="Express" />;
+      case "SocketIO":
+        return <SiSocketdotio title="Socket.IO" />;
       case "Flask":
         return <SiFlask title="Flask" />;
       case "REST API":
@@ -64,8 +74,11 @@ const Skills = ({ skills }) => {
       case "CI/CD":
         return <SiGithubactions title="CI/CD" />;
       case "HuggingFace":
-        return <SiHuggingface title="HuggingFace" />; // Added Hugging Face icon with alt text
-
+        return <SiHuggingface title="HuggingFace" />;
+      case "OpenCV":
+        return <SiOpencv title="OpenCV" />;
+      case "Unity":
+        return <SiUnity title="Unity" />;
       default:
         return <span>{skill}</span>; // fallback for skills without an icon
     }

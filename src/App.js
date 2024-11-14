@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Experiences from "./components/Experiences";
+import ContactPage from "./components/ContactPage";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -40,6 +41,8 @@ function App() {
         return <Projects mobile={mobile} />;
       case "experiences":
         return <Experiences mobile={mobile} />;
+      case "contact":
+        return <ContactPage mobile={mobile}></ContactPage>;
       default:
         return <Home mobile={mobile} />;
     }

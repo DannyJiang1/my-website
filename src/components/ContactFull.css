@@ -1,0 +1,25 @@
+.contact-main-box {
+  position: relative; /* Relative positioning */
+  width: calc(50vw + 100px);
+  height: calc(50vh + 150px);
+  min-width: 800px;
+  max-width: 1500px;
+  min-height: 600px;
+  max-height: 1000px;
+  font-family: 'OCR A Std', sans-serif;
+  overflow: hidden;
+  border: 2px solid #4AF626;
+  background-color: black;
+  margin-top: 20px; /* Adjust for vertical spacing */
+}
+
+.contact-top-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 5px;
+  border-bottom: 2px solid #4AF626;
+  z-index: 3;
+  position: relative;
+  height: 30px;
+}

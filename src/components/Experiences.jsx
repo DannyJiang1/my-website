@@ -11,10 +11,11 @@ function Experiences({ mobile }) {
   const [popupTitle, setPopupTitle] = useState("");
   const [popupRole, setPopupRole] = useState("");
   const [popupSkills, setPopupSkills] = useState([]);
+  const [popupLink, setPopupLink] = useState("");
   const [isContentVisible, setIsContentVisible] = useState(false); // Manage content rendering
   const [currID, setCurrID] = useState(-1);
   // Handles opening the popup with transition
-  const handleOpen = (pTitle, newRole, newSkills, pText, newID) => {
+  const handleOpen = (pTitle, newRole, newLink, newSkills, pText, newID) => {
     setIsTransitioning(true); // Start the green box transition
     setShowPopUp(true); // Show the popup container (without content)
 
@@ -24,6 +25,7 @@ function Experiences({ mobile }) {
       setCurrID(newID);
       setPopupRole(newRole);
       setPopupSkills(newSkills);
+      setPopupLink(newLink);
       setIsContentVisible(true); // Render content when the box is fully covered
     }, 500); // Show content after green box covers (1 second)
 
@@ -49,7 +51,14 @@ function Experiences({ mobile }) {
   };
 
   // Handles transition between content
-  const handleTransition = (newTitle, newRole, newSkills, newText, newID) => {
+  const handleTransition = (
+    newTitle,
+    newRole,
+    newLink,
+    newSkills,
+    newText,
+    newID
+  ) => {
     if (showPopup) {
       // If the popup is already open, do the transition
       if (newID === currID) return;
@@ -62,6 +71,7 @@ function Experiences({ mobile }) {
         setCurrID(newID);
         setPopupRole(newRole);
         setPopupSkills(newSkills);
+        setPopupLink(newLink);
         setIsContentVisible(true); // Update content
       }, 500); // Update content after green box covers it
 
@@ -71,7 +81,7 @@ function Experiences({ mobile }) {
     } else {
       // If the popup is not open, handle it like a normal open
       if (isTransitioning) return;
-      handleOpen(newTitle, newRole, newSkills, newText, newID);
+      handleOpen(newTitle, newRole, newLink, newSkills, newText, newID);
     }
   };
 
@@ -89,6 +99,7 @@ function Experiences({ mobile }) {
           <MobileEntry
             title={"SUSE"}
             role={"Software Engineer Intern"}
+            link={"https://github.com/openSUSE/iguana"}
             date={"Jun. 2023 - Aug. 2023"}
             skills={["Python", "Docker", "Bash", "Linux", "CI/CD"]}
           >
@@ -177,6 +188,7 @@ function Experiences({ mobile }) {
           <MobileEntry
             title={"University of Michigan SIM Multidisciplinary Research Team"}
             role={"Student Software Engineer"}
+            link={"https://github.com/UmichSIM/SIM_MDP_GUI"}
             date={"Jan. 2023 - Jan. 2024"}
             skills={["C++", "Python", "Git"]}
           >
@@ -265,6 +277,7 @@ function Experiences({ mobile }) {
           <MobileEntry
             title={"University of Michigan College of Engineering"}
             role={"Research Assistant"}
+            link={""}
             date={"Jun. 2024 - Present"}
             skills={["C++", "Python", "PyTorch", "HuggingFace", "Git"]}
           >
@@ -354,6 +367,7 @@ function Experiences({ mobile }) {
               handleTransition(
                 "SUSE",
                 "Software Engineer Intern",
+                "https://github.com/openSUSE/iguana",
                 ["Python", "Docker", "Bash", "Linux", "CI/CD"],
                 <>
                   <h3>Inspiration</h3>
@@ -458,6 +472,7 @@ function Experiences({ mobile }) {
               handleTransition(
                 "University of Michigan SIM Multidisciplinary Research Team",
                 "Student Software Engineer",
+                "https://github.com/UmichSIM/SIM_MDP_GUI",
                 ["C++", "Python", "Git"],
                 <>
                   <h3>Inspiration</h3>
@@ -561,6 +576,7 @@ function Experiences({ mobile }) {
               handleTransition(
                 "University of Michigan College of Engineering",
                 "Research Assistant",
+                "",
                 ["C++", "Python", "PyTorch", "HuggingFace", "Git"],
                 <>
                   <h3>Inspiration</h3>
@@ -665,6 +681,7 @@ function Experiences({ mobile }) {
               <EntryPopUp
                 title={popupTitle}
                 role={popupRole}
+                link={popupLink}
                 skills={popupSkills}
                 onClose={handleClose}
                 isTransitioning={isTransitioning}

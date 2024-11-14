@@ -15,14 +15,6 @@ function Home({ mobile }) {
     setShowText(false);
     setShowCatCommand(false);
     setShowActualHomePage(false); // Reset state when component mounts
-
-    // Disable scrolling
-    document.body.style.overflow = "hidden";
-
-    // Clean up to restore default scrolling behavior when the component unmounts
-    return () => {
-      document.body.style.overflow = "auto";
-    };
   }, []);
 
   useEffect(() => {
@@ -53,7 +45,7 @@ function Home({ mobile }) {
       <div
         style={{
           backgroundColor: "black",
-          height: `calc(100vh - ${navbarHeight}px)`,
+          minHeight: `calc(100vh - ${navbarHeight}px)`,
           padding: "20px",
           color: "#4AF626",
           fontFamily: "'OCR A Std', sans-serif",
@@ -110,7 +102,6 @@ function Home({ mobile }) {
             />
           </div>
         </div>
-
         <div
           style={{
             flex: mobile ? "none" : 1,
@@ -129,7 +120,7 @@ function Home({ mobile }) {
             src="/my-picture.jpg"
             alt="Portrait"
             style={{
-              maxWidth: "500px",
+              maxWidth: mobile ? "350px" : "500px",
               width: "100%",
               height: "auto",
               borderRadius: "8px",
@@ -139,7 +130,7 @@ function Home({ mobile }) {
           <div
             style={{
               width: "150ch",
-              fontSize: "5px",
+              fontSize: mobile ? "3px" : "5px",
               display: isHovered ? "block" : "none",
             }}
             onMouseEnter={() => setIsHovered(true)}
