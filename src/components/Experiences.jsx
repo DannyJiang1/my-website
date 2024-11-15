@@ -3,6 +3,7 @@ import EntryPopUp from "./EntryPopUp";
 import Entry from "./Entry";
 import MobileEntry from "./MobileEntry";
 import EntryBodyContainer from "./EntryBodyContainer";
+import "./Experiences.css";
 
 function Experiences({ mobile }) {
   const [showPopup, setShowPopUp] = useState(false);
@@ -87,8 +88,8 @@ function Experiences({ mobile }) {
 
   return (
     <div
+      id="exp-page"
       style={{
-        backgroundColor: "black",
         minHeight: mobile ? "auto" : `calc(100vh - 80px)`,
         height: mobile ? "100%" : "auto",
         overflowY: mobile ? "auto" : "hidden",

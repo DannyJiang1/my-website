@@ -3,8 +3,6 @@ import { useScramble } from "use-scramble";
 import "./About.css";
 
 function About({ mobile }) {
-  const navbarHeight = 80;
-
   const { ref: aboutMeRef } = useScramble({
     text: "About Me",
     range: [33, 47],
@@ -81,24 +79,18 @@ function About({ mobile }) {
 
   return (
     <div
+      className="about-page"
       style={{
-        backgroundColor: "black",
-        minHeight: `calc(100vh - ${navbarHeight}px)`, // Ensure the container covers the viewport
-        padding: "40px",
-        fontFamily: "'OCR A Std', sans-serif",
-        color: "#4AF626",
-        display: mobile ? "block" : "flex", // Flexbox for desktop, block layout for mobile
-        justifyContent: mobile ? "initial" : "space-between", // Align items in desktop
-        alignItems: mobile ? "initial" : "center", // Center items vertically in desktop
-        overflowY: "auto", // Enable scrolling when content overflows
+        display: mobile ? "block" : "flex",
+        justifyContent: mobile ? "initial" : "space-between",
+        alignItems: mobile ? "initial" : "center",
       }}
     >
-      {/* Text section */}
       <div
         style={{
           flex: mobile ? "none" : 1,
-          paddingRight: mobile ? "0" : "20px", // Add padding for desktop
-          marginBottom: mobile ? "20px" : "0", // Add margin for mobile
+          paddingRight: mobile ? "0" : "20px",
+          marginBottom: mobile ? "20px" : "0",
         }}
       >
         <div
@@ -157,26 +149,8 @@ function About({ mobile }) {
           marginTop: mobile ? "20px" : "0",
         }}
       >
-        <img
-          src="Prague.png"
-          alt="Prague"
-          style={{
-            maxWidth: "700px",
-            width: "100%", // Make sure the image scales properly
-            height: "auto",
-            borderRadius: "8px",
-          }}
-        />
-        <p
-          style={{
-            marginTop: "8px", // Add some space between the image and the caption
-            color: "#4AF626", // Match the text color to the theme
-            fontSize: "14px", // Adjust the font size as needed
-            textAlign: "center", // Center the caption text
-          }}
-        >
-          My Hometown Prague
-        </p>
+        <img id="prague-pic" src="Prague.png" alt="Prague" />
+        <p id="prague-caption">My Hometown Prague</p>
       </div>
     </div>
   );

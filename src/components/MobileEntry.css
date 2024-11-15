@@ -1,22 +1,22 @@
 .entry-box-mobile {
-  width: 500px;
+  width: 550px;
   border-width: 2px;
   border-style: solid;
-  border-color: #4AF626;
+  border-color: var(--primary-color);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
   background-color: none;
-  color: #4AF626;
+  color: var(--primary-color);
 }
 
-.role-text{
-  color: #4AF626;
+.role-text {
+  color: var(--primary-color);
   z-index: 3;
 }
 
 .fa-github {
-    color: #4AF626;
+  color: var(--primary-color);
 }
 
 @media (max-width: 550px) {

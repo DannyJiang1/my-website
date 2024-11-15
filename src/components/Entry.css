@@ -1,17 +1,17 @@
-.entry-box {
+#entry-box {
   width: 500px;
   border-width: 2px;
   border-style: solid;
-  border-color: #4AF626;
+  border-color: var(--primary-color);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
   background-color: none;
-  color: #4AF626;
+  color: var(--primary-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.entry-box:hover {
-  background-color: #4AF626;
-  color: black;
+#entry-box:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
 }

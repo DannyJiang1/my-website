@@ -3,7 +3,7 @@
   position: relative;
   background: none;
   border: none;
-  color: #4af626;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -31,30 +31,35 @@
   position: absolute;
   width: 0;
   height: 1.3em;
-  background: black;
+  background: var(--background-color);
   white-space: nowrap;
   overflow: hidden;
 }
 
 .btn--primary:hover .anim-btn,
 .btn--mobile:hover .anim-btn {
-  color: black;
+  color: var(--background-color);
 }
 
 .btn--primary:hover .anim-text,
 .btn--mobile:hover .anim-text {
   width: var(--text-width);
-  border-right: 2px solid #4AF626;
-  animation: type 1s steps(var(--steps), end),
-             blink 1.1s linear 1s infinite;
+  border-right: 2px solid var(--primary-color);
+  animation: type 1s steps(var(--steps), end), blink 1.1s linear 1s infinite;
   animation-fill-mode: forwards;
 }
 
 @keyframes type {
-  from { width: 0; }
-} 
+  from {
+    width: 0;
+  }
+}
 
-@keyframes blink { 
-  45% { border-right: 2px solid black; } 
-  100% { border-right: 2px solid black; } 
+@keyframes blink {
+  45% {
+    border-right: 2px solid var(--background-color);
+  }
+  100% {
+    border-right: 2px solid var(--background-color);
+  }
 }

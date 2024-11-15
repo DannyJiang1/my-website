@@ -5,8 +5,8 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  font-family: 'OCR A Std', sans-serif;
-  color: #4AF626;                                              
+  font-family: "OCR A Std", sans-serif;
+  color: var(--primary-color);
   position: sticky;
   top: 0;
   z-index: 999;
@@ -40,7 +40,7 @@
   margin-right: 2rem;
   font: inherit;
   height: 100%;
-  color: #4AF626;
+  color: var(--primary-color);
 }
 
 .nav-item {
@@ -59,7 +59,7 @@
   padding: 0.5rem 1rem;
   height: 100%;
   font: inherit;
-  color: #4AF626;
+  color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -119,12 +119,11 @@
   }
 
   .fa-bars {
-    color: #4AF626;
+    color: var(--primary-color);
   }
 
   .fa-times {
-    color: #4AF626;
+    color: var(--primary-color);
     font-size: 2rem;
   }
-
 }

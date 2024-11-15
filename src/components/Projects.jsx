@@ -477,7 +477,7 @@ function Projects({ mobile }) {
                       href="https://devpost.com/software/asl-battle"
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: "inherit" }}
+                      style={{}}
                     >
                       https://devpost.com/software/asl-battle
                     </a>

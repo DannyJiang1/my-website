@@ -1,23 +1,46 @@
-.page-title{
-    font-size: 36px;
-    margin-bottom: 20px;
-    display: inline;
+.about-page {
+  background-color: var(--background-color);
+  min-height: calc(100vh - 80px);
+  padding: 40px;
+  font-family: "OCR A Std";
+  color: var(--primary-color);
+  overflow-y: auto;
 }
 
-.section-title{
-    margin-top: 30px;
-    font-size: 28px;
-    margin-bottom: 10px;
+.page-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  display: inline;
 }
 
-.link-icon{
-    font-size: 36px;
-    cursor: pointer;
-    color: #4AF626;
-    text-decoration: none;
+.section-title {
+  margin-top: 30px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.body-text{
-    font-size: 18px;
-    line-height: 1.6;
+.link-icon {
+  font-size: 36px;
+  cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.body-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#prague-pic {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#prague-caption {
+  margin-top: 8px;
+  color: var(--primary-color);
+  font-size: 14px;
+  text-align: center;
 }

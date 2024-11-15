@@ -1,7 +1,7 @@
 .skill-icon svg {
-  color: #4AF626; /* Applies the specified green color */
-  width: 30px;    /* Optional: adjust icon width */
-  height: 30px;   /* Optional: adjust icon height */
+  color: var(--primary-color);
+  width: 30px;
+  height: 30px;
 }
 
 .skill-icon {

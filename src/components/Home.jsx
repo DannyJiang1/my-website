@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
+import "./Home.css";
 
 function Home({ mobile }) {
   const [showText, setShowText] = useState(false);
@@ -9,7 +10,6 @@ function Home({ mobile }) {
   const CURSOR_CLASS_NAME = "custom-type-animation-cursor";
   const cat_delay = 1000;
   const homePage_delay = 3000;
-  const navbarHeight = 80;
 
   useEffect(() => {
     setShowText(false);
@@ -43,23 +43,19 @@ function Home({ mobile }) {
   if (showActualHomePage) {
     return (
       <div
+        id="home-page"
         style={{
-          backgroundColor: "black",
-          minHeight: `calc(100vh - ${navbarHeight}px)`,
-          padding: "20px",
-          color: "#4AF626",
-          fontFamily: "'OCR A Std', sans-serif",
-          display: "flex",
           flexDirection: mobile ? "column" : "row",
           alignItems: mobile ? "flex-start" : "center",
           justifyContent: mobile ? "flex-start" : "space-between",
         }}
       >
         <div
+          id="home-text-area"
           style={{
             flex: mobile ? "none" : 1,
-            fontSize: "18px",
             maxWidth: "600px",
+            paddingLeft: mobile ? "0px" : "50px",
             marginBottom: mobile ? "auto" : "0",
           }}
         >
@@ -68,11 +64,10 @@ function Home({ mobile }) {
               cursor={false}
               sequence={["Hey! I am Danny Jiang."]}
               speed={200}
+              className={`${CURSOR_CLASS_NAME} terminal-text`}
               style={{
                 fontSize: "30px",
-                color: "#4AF626",
               }}
-              className={CURSOR_CLASS_NAME}
             />
           </div>
           <div style={{ paddingBottom: "20px" }}>
@@ -80,11 +75,10 @@ function Home({ mobile }) {
               cursor={false}
               sequence={[1000, "CS Student @ Michigan Engineering"]}
               speed={200}
+              className={`${CURSOR_CLASS_NAME} terminal-text`}
               style={{
                 fontSize: "14px",
-                color: "#4AF626",
               }}
-              className={CURSOR_CLASS_NAME}
             />
           </div>
           <div>
@@ -94,24 +88,19 @@ function Home({ mobile }) {
                 "I am very passionate about AI and ML, and I love building and exploring machine learning applications. Check out my projects and experiences!",
               ]}
               speed={75}
+              className={`${CURSOR_CLASS_NAME} terminal-text`}
               style={{
                 fontSize: "20px",
-                color: "#4AF626",
               }}
-              className={CURSOR_CLASS_NAME}
             />
           </div>
         </div>
         <div
+          id="portrait-container"
           style={{
             flex: mobile ? "none" : 1,
-            display: "flex",
             justifyContent: mobile ? "center" : "center",
-            alignItems: "center",
             alignSelf: mobile ? "flex-end" : "center",
-            width: "100%",
-            paddingTop: "60px",
-            paddingBottom: "60px",
           }}
         >
           <img
@@ -119,11 +108,9 @@ function Home({ mobile }) {
             onMouseLeave={() => setIsHovered(false)}
             src="/my-picture.jpg"
             alt="Portrait"
+            id="portrait"
             style={{
               maxWidth: mobile ? "350px" : "500px",
-              width: "100%",
-              height: "auto",
-              borderRadius: "8px",
               display: isHovered ? "none" : "block",
             }}
           />
@@ -211,14 +198,7 @@ function Home({ mobile }) {
     );
   } else {
     return (
-      <div
-        style={{
-          backgroundColor: "black",
-          height: `calc(100vh - ${navbarHeight}px)`,
-          padding: "20px",
-          overflow: "hidden",
-        }}
-      >
+      <div id="animation-page">
         <div>
           <TypeAnimation
             cursor={false}
@@ -231,19 +211,15 @@ function Home({ mobile }) {
               () => setShowText(true),
             ]}
             speed={50}
-            className={CURSOR_CLASS_NAME}
-            style={{
-              fontSize: "14px",
-              fontFamily: "'OCR A Std', sans-serif",
-              color: "#4AF626",
-            }}
+            className={`${CURSOR_CLASS_NAME} terminal-text`}
+            style={{ fontSize: "14px" }}
           />
         </div>
 
-        {/* Display this text when showText is true */}
         {showText && (
           <div
-            style={{ color: "#4AF626", fontSize: "14px", marginTop: "20px" }}
+            className="terminal-text"
+            style={{ fontSize: "14px", marginTop: "20px" }}
           >
             about experiences projects README.txt
           </div>
@@ -260,11 +236,8 @@ function Home({ mobile }) {
                 "danny-jiang:~/ $ cat README.txt",
               ]}
               speed={50}
-              style={{
-                fontSize: "14px",
-                fontFamily: "'OCR A Std', sans-serif",
-                color: "#4AF626",
-              }}
+              className="terminal-text"
+              style={{ fontSize: "14px" }}
             />
           </div>
         )}
