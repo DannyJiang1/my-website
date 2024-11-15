@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./ContactForm.css";
 
@@ -39,9 +40,26 @@ function ContactForm() {
     e.preventDefault();
     const isEmailValid = validateEmail(formData.email);
     if (isEmailValid) {
-      const token = captchaRef.current.getValue();
+      // const token = captchaRef.current.getValue();
       captchaRef.current.reset();
-      alert("Form submitted successfully!");
+      emailjs
+        .sendForm(
+          "service_qnfuvef",
+          "template_aq5b86l",
+          e.target,
+          "OkH74HC3Kp6rPppPD"
+        )
+        .then(
+          (result) => {
+            console.log("Email sent successfully:", result.text);
+            alert("Your message has been sent!");
+            setFormData({ name: "", email: "", message: "" });
+          },
+          (error) => {
+            console.error("Error sending email:", error.text);
+            alert("Failed to send your message. Please try again.");
+          }
+        );
     }
   };
 
@@ -90,7 +108,7 @@ function ContactForm() {
           ></textarea>
         </div>
         <ReCAPTCHA
-          sitekey={process.env.REACT_APP_SITE_KEY}
+          sitekey="6LdhQH4qAAAAAKrHyL8VgRS59PAA1EBBTMe0Le_3"
           onChange={handleCaptchaChange}
           ref={captchaRef}
         />
