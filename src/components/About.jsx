@@ -110,7 +110,7 @@ function About({ mobile }) {
             }}
           >
             <a
-              href="/JIANG_CHENGSHUO_RESUME.pdf"
+              href="/JIANG_CHENGSHUO_RESUME_PORTFOLIO.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
