@@ -11,6 +11,12 @@ function Home({ mobile }) {
   const cat_delay = 1000;
   const homePage_delay = 3000;
 
+  const handlePageClick = () => {
+    setShowActualHomePage(true);
+    setShowText(false);
+    setShowCatCommand(false);
+  };
+
   useEffect(() => {
     setShowText(false);
     setShowCatCommand(false);
@@ -198,7 +204,7 @@ function Home({ mobile }) {
     );
   } else {
     return (
-      <div id="animation-page">
+      <div id="animation-page" onClick={handlePageClick}>
         <div>
           <TypeAnimation
             cursor={false}
