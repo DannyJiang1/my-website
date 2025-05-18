@@ -279,7 +279,7 @@ function Experiences({ mobile }) {
             title={"University of Michigan College of Engineering"}
             role={"Research Assistant"}
             link={""}
-            date={"Jun. 2024 - Present"}
+            date={"Jun. 2024 - Jan. 2025"}
             skills={["C++", "Python", "PyTorch", "HuggingFace", "Git"]}
           >
             <h3>Inspiration</h3>
@@ -357,6 +357,100 @@ function Experiences({ mobile }) {
               valuable insights into how PowerInfer optimizes model inference,
               and I look forward to expanding on this knowledge as my research
               progresses.
+            </p>
+          </MobileEntry>
+          <MobileEntry
+            title={"YIWEI Medical"}
+            role={"Deep Learning Research Engineer (Remote)"}
+            link={""}
+            date={"Aug. 2024 - Jan. 2025"}
+            skills={["Java", "Python", "Kubernetes", "Next", "TensorFlow"]}
+          >
+            <h3>Inspiration</h3>
+            <p>
+              The inspiration for this project came from the critical need to
+              improve early diagnosis of autism spectrum disorder (ASD). Early
+              detection can significantly impact the lives of children with ASD
+              by enabling timely interventions. However, diagnosing ASD can be
+              challenging due to the variability in symptoms and the reliance on
+              behavioral observations. I saw an opportunity to leverage advanced
+              technologies like machine learning and eye-tracking data to create
+              a more objective and accurate diagnostic tool.
+            </p>
+            <br />
+            <h3>What it does</h3>
+            <p>
+              This project involves a hybrid machine learning model that
+              predicts ASD by analyzing eye-tracking data. The model integrates
+              temporal patterns from time-series data and spatial features from
+              scan path images to achieve high diagnostic accuracy. The system
+              is deployed as a scalable web application, providing healthcare
+              professionals with an intuitive interface to upload data, receive
+              predictions, and manage patient information.
+            </p>
+            <br />
+            <h3>What I did</h3>
+            <p>
+              In this project, I developed a hybrid machine learning model using
+              TensorFlow to predict autism spectrum disorder (ASD). The model is
+              a combination of LSTM and CNN architectures, which allowed me to
+              integrate temporal patterns from time-series eye-tracking data and
+              spatial features from scan path images. This integration
+              significantly enhanced the diagnostic accuracy of the model. To
+              prepare the data for the model, I preprocessed diverse
+              eye-tracking datasets using Pandas and NumPy. This preprocessing
+              included normalization, augmentation, and feature extraction,
+              ensuring that the data was suitable for the multimodal input
+              required by the model. With the model and data ready, I then
+              focused on building the application. I created a robust backend
+              using Java and Spring Boot to handle API requests and manage data
+              flow efficiently. For the frontend, I chose Next.js to design an
+              intuitive and user-friendly interface tailored for healthcare
+              professionals. This interface aims to facilitate early ASD
+              diagnostics by providing easy access to the model's predictions.
+              Finally, to make the application accessible and scalable, I
+              deployed it on Alibaba Cloud. I utilized Kubernetes for container
+              orchestration, which ensured that the application could maintain
+              high availability across a multi-node cluster, ready to handle
+              real-world usage.
+            </p>
+            <br />
+            <h3>Challenges I ran into</h3>
+            <p>
+              One of the main challenges was integrating the temporal and
+              spatial data effectively within the model. Ensuring that the LSTM
+              and CNN components worked harmoniously required extensive
+              experimentation and tuning. Another challenge was achieving the
+              high level of accuracy necessary for a medical diagnostic tool,
+              which involved rigorous testing and validation with diverse
+              datasets. Additionally, deploying the model in a cloud environment
+              while maintaining scalability and high availability presented its
+              own set of complexities, particularly with container orchestration
+              using Kubernetes.
+            </p>
+            <br />
+            <h3>Accomplishments that I’m proud of</h3>
+            <p>
+              I am particularly proud of developing a sophisticated machine
+              learning model that successfully integrates different types of
+              data to predict ASD with high accuracy. Building a full-stack web
+              application that is both functional and user-friendly for
+              healthcare professionals is another significant achievement.
+              Successfully deploying the application on Alibaba Cloud using
+              Kubernetes, ensuring it can handle real-world usage, is also a
+              point of pride.
+            </p>
+            <br />
+            <h3>What I learned</h3>
+            <p>
+              Throughout this project, I gained deep insights into machine
+              learning model development, particularly in handling multimodal
+              data. I learned advanced techniques in data preprocessing and
+              feature extraction using Pandas and NumPy. Developing the backend
+              with Spring Boot and the frontend with Next.js enhanced my skills
+              in full-stack development. Additionally, deploying the application
+              on Alibaba Cloud with Kubernetes taught me valuable lessons in
+              cloud computing and container orchestration.
             </p>
           </MobileEntry>
         </div>
@@ -667,8 +761,117 @@ function Experiences({ mobile }) {
           >
             <>
               <h3>Research Assistant</h3>
-              <p>Jun. 2024 - Present</p>
+              <p>Jun. 2024 - Jan. 2025</p>
             </>
+          </Entry>
+          <Entry
+            title={"YIWEI Medical"}
+            onClick={() =>
+              handleTransition(
+                "YIWEI Medical",
+                "Deep Learning Research Engineer (Remote)",
+                "",
+                ["Java", "Python", "Kubernetes", "Next", "TensorFlow"],
+                <>
+                  <h3>Inspiration</h3>
+                  <p>
+                    The inspiration for this project came from the critical need
+                    to improve early diagnosis of autism spectrum disorder
+                    (ASD). Early detection can significantly impact the lives of
+                    children with ASD by enabling timely interventions. However,
+                    diagnosing ASD can be challenging due to the variability in
+                    symptoms and the reliance on behavioral observations. I saw
+                    an opportunity to leverage advanced technologies like
+                    machine learning and eye-tracking data to create a more
+                    objective and accurate diagnostic tool.
+                  </p>
+                  <br />
+                  <h3>What it does</h3>
+                  <p>
+                    This project involves a hybrid machine learning model that
+                    predicts ASD by analyzing eye-tracking data. The model
+                    integrates temporal patterns from time-series data and
+                    spatial features from scan path images to achieve high
+                    diagnostic accuracy. The system is deployed as a scalable
+                    web application, providing healthcare professionals with an
+                    intuitive interface to upload data, receive predictions, and
+                    manage patient information.
+                  </p>
+                  <br />
+                  <h3>What I did</h3>
+                  <p>
+                    In this project, I developed a hybrid machine learning model
+                    using TensorFlow to predict autism spectrum disorder (ASD).
+                    The model is a combination of LSTM and CNN architectures,
+                    which allowed me to integrate temporal patterns from
+                    time-series eye-tracking data and spatial features from scan
+                    path images. This integration significantly enhanced the
+                    diagnostic accuracy of the model. To prepare the data for
+                    the model, I preprocessed diverse eye-tracking datasets
+                    using Pandas and NumPy. This preprocessing included
+                    normalization, augmentation, and feature extraction,
+                    ensuring that the data was suitable for the multimodal input
+                    required by the model. With the model and data ready, I then
+                    focused on building the application. I created a robust
+                    backend using Java and Spring Boot to handle API requests
+                    and manage data flow efficiently. For the frontend, I chose
+                    Next.js to design an intuitive and user-friendly interface
+                    tailored for healthcare professionals. This interface aims
+                    to facilitate early ASD diagnostics by providing easy access
+                    to the model's predictions. Finally, to make the application
+                    accessible and scalable, I deployed it on Alibaba Cloud. I
+                    utilized Kubernetes for container orchestration, which
+                    ensured that the application could maintain high
+                    availability across a multi-node cluster, ready to handle
+                    real-world usage.
+                  </p>
+                  <br />
+                  <h3>Challenges I ran into</h3>
+                  <p>
+                    One of the main challenges was integrating the temporal and
+                    spatial data effectively within the model. Ensuring that the
+                    LSTM and CNN components worked harmoniously required
+                    extensive experimentation and tuning. Another challenge was
+                    achieving the high level of accuracy necessary for a medical
+                    diagnostic tool, which involved rigorous testing and
+                    validation with diverse datasets. Additionally, deploying
+                    the model in a cloud environment while maintaining
+                    scalability and high availability presented its own set of
+                    complexities, particularly with container orchestration
+                    using Kubernetes.
+                  </p>
+                  <br />
+                  <h3>Accomplishments that I’m proud of</h3>
+                  <p>
+                    I am particularly proud of developing a sophisticated
+                    machine learning model that successfully integrates
+                    different types of data to predict ASD with high accuracy.
+                    Building a full-stack web application that is both
+                    functional and user-friendly for healthcare professionals is
+                    another significant achievement. Successfully deploying the
+                    application on Alibaba Cloud using Kubernetes, ensuring it
+                    can handle real-world usage, is also a point of pride.
+                  </p>
+                  <br />
+                  <h3>What I learned</h3>
+                  <p>
+                    Throughout this project, I gained deep insights into machine
+                    learning model development, particularly in handling
+                    multimodal data. I learned advanced techniques in data
+                    preprocessing and feature extraction using Pandas and NumPy.
+                    Developing the backend with Spring Boot and the frontend
+                    with Next.js enhanced my skills in full-stack development.
+                    Additionally, deploying the application on Alibaba Cloud
+                    with Kubernetes taught me valuable lessons in cloud
+                    computing and container orchestration.
+                  </p>
+                </>,
+                0
+              )
+            }
+          >
+            <h3>Deep Learning Research Engineer (Remote)</h3>
+            <p>Aug. 2024 - Jan. 2025</p>
           </Entry>
           {showPopup && !mobile && (
             <div

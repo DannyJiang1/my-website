@@ -27,6 +27,8 @@ import {
   SiExpress,
   SiSocketdotio,
   SiUnity,
+  SiNextdotjs, // Added for Next.js
+  SiKubernetes, // Added for Kubernetes
 } from "@icons-pack/react-simple-icons";
 import "./Skills.css";
 
@@ -79,8 +81,12 @@ const Skills = ({ skills }) => {
         return <SiOpencv title="OpenCV" />;
       case "Unity":
         return <SiUnity title="Unity" />;
+      case "Next": // Added case for Next.js
+        return <SiNextdotjs title="Next.js" />;
+      case "Kubernetes": // Added case for Kubernetes
+        return <SiKubernetes title="Kubernetes" />;
       default:
-        return <span>{skill}</span>; // fallback for skills without an icon
+        return <span>{skill}</span>; // Fallback for skills without an icon
     }
   };
 
@@ -95,7 +101,7 @@ const Skills = ({ skills }) => {
               </td>
             ))}
           </tr>
-        </tbody>
+        </tbody>  
       </table>
     </div>
   );
